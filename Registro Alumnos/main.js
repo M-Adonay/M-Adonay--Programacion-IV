@@ -3,67 +3,27 @@ var idUnicoFecha = ()=>{
     return Math.floor(fecha.getTime()/1000).toString(16);
 };
 var app = new Vue({
-    el: '#appCliente',
+    el: '#appSistema',
     data: {
-        clientes: [],
-        buscar: '',
-        cliente: {
-            accion: 'nuevo',
-            msg : '',
-            idCliente: '',
-            codigo: '',
-            nombre: '',
-            direccion: '',
-            telefono: '',
-            dui: ''
-        },
+       forms:{
+           'cliente':{ mostrar: false },
+           'categoria':{ mostrar: false },
+           'producto':{ mostrar: false },
+           'proveedor':{ mostrar: false },
+       }
     },
     methods: {
-        buscarCliente(){
-            /*if( this.buscar.trim().length>0 ){
-                this.clientes = this.clientes.filter(item=>item.nombre.toLowerCase().indexOf(this.buscar.toLowerCase())>=0);
-            } else {
-                this.obtenerClientes();
-            }*/
-            this.obtenerClientes(this.buscar);
-        },
-        guardarCliente(){
-            if(this.cliente.accion == 'nuevo'){
-                this.cliente.idCliente = idUnicoFecha();
-            }
-            localStorage.setItem(this.cliente.idCliente, JSON.stringify(this.cliente));
-            this.cliente.msg = 'Cliente procesado con exito';
-            this.nuevoCliente();
-            this.obtenerClientes();
-        },
-        modificarCliente(cliente){
-            this.cliente = cliente;
-            this.cliente.accion = 'modificar';
-        },
-        eliminarCliente(cliente){
-            if( confirm(`¿Esta seguro de eliminar el cliente ${cliente.nombre}?`) ){
-                this.cliente.idCliente = cliente.idCliente;
-                this.cliente.accion = 'eliminar';
-                this.guardarCliente();
-            }
-        },
-        obtenerClientes(busqueda=''){
-                    /*this.clientes = [];
-                    for(let i=0; i<results.rows.length; i++){
-                        this.clientes.push(results.rows.item(i));
-                    }*/
-        },
-        nuevoCliente(){
-            this.cliente.accion = 'nuevo';
-            this.cliente.idCliente = '';
-            this.cliente.codigo = '';
-            this.cliente.nombre = '';
-            this.cliente.direccion = '';
-            this.cliente.telefono = '';
-            this.cliente.dui = '';
-        }
+        
     },
     created(){
-        this.obtenerClientes();
+       
     }
+});
+document.addEventListener('DOMContentLoaded', event=>{
+    let $element = document.querySelectorAll('.mostrar').forEach( (element,index)=>{
+        element.addEventListener('click', e=>{
+            app.forms[e.target.dataset.form].mostrar = true;
+            //app.forms[e.target.dataset.form].obtenerDatos();
+        });
+    });
 });
