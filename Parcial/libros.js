@@ -158,9 +158,9 @@ Vue.component('libro',{
                             <tr>
                                 <th>autor</th>
                                 <th>lsbn</th>
-                                <th>M-INICIAL</th>
-                                <th>M-FINAL</th>
-                                <th>TOTAL A PAGAR</th>
+                                <th>TITULO</th>
+                                <th>EDITORIAL</th>
+                                <th>EDICION</th>
                                 <th></th>
                             </tr>
                         </thead>

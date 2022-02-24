@@ -133,8 +133,8 @@ Vue.component('autor',{
                             <tr>
                                 <th>CODIGO</th>
                                 <th>NOMBRE</th>
-                                <th>pais</th>
-                                <th>telefono</th>
+                                <th>PAIS</th>
+                                <th>TELEFONO</th>
                                 <th></th>
                             </tr>
                         </thead>
