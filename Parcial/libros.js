@@ -108,21 +108,21 @@ Vue.component('libro',{
                             </div>
                         </div>
                         <div class="row p-1">
-                            <div class="col col-md-2">Metro inicial:</div>
+                            <div class="col col-md-2">Libros:</div>
                             <div class="col col-md-3">
-                                <input title="Ingrese libro inicial" v-model="libro.titulo" required type="text" class="form-control">
+                                <input title="Ingrese los libro" v-model="libro.titulo" required type="text" class="form-control">
                             </div>
                         </div>
                         <div class="row p-1">
-                            <div class="col col-md-2">Metro final:</div>
+                            <div class="col col-md-2">Editorial:</div>
                             <div class="col col-md-3">
-                                <input title="Ingrese los metros consumidos, final" v-model="libro.editorial" required type="text" class="form-control">
+                                <input title="Ingrese la editorial, final" v-model="libro.editorial" required type="text" class="form-control">
                             </div>
                         </div>
                         <div class="row p-1">
-                            <div class="col col-md-2">Total:</div>
+                            <div class="col col-md-2">Edicion:</div>
                             <div class="col col-md-3">
-                                <input title="Total" v-model="libro.edicion" pattern="[0-9.]{1,10}" required type="text" class="form-control">
+                                <input title="Edicion" v-model="libro.edicion" pattern="[0-9.]{1,10}" required type="text" class="form-control">
                             </div>
                         </div>
                         <div class="row p-1">
