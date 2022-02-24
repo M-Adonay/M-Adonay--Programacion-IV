@@ -91,7 +91,7 @@ Vue.component('autor',{
                         <div class="row p-1">
                             <div class="col col-md-2">pais:</div>
                             <div class="col col-md-3">
-                                <input title="Ingrese la pais" v-model="autor.pais" pattern="[A-Za-zñÑáéíóúü ]{3,100}" required type="text" class="form-control">
+                                <input title="Ingrese el pais" v-model="autor.pais" pattern="[A-Za-zñÑáéíóúü ]{3,100}" required type="text" class="form-control">
                             </div>
                         </div>
                         <div class="row p-1">
