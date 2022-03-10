@@ -1,5 +1,4 @@
 <?php
 include('config.php');
-$conexion = new DB('localhost','root','');
-
+$conexion = new DB('localhost', 'root', '');
 ?>
