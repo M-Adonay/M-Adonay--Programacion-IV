@@ -8,13 +8,13 @@
 </head>
 <body>
     <form id="frmUsuarios" method="get">
-        Nombre: <input type="txt" id="txtUsuario" required>
+        Nombre: <input type="text" id="txtUsuario" required>
         Clave: <input type="password" id="txtClave" required>
         <input type="submit" value="Enviar">
     </form>
     <script>
-        const frm = document.querySelector("#frmUsuario");
-        frm.addEventListener('submit',e=>{
+        const frm = document.querySelector('#frmUsuarios');
+        frm.addEventListener('submit', e=>{
             e.preventDefault();
 
             const usuario = document.querySelector("#txtUsuario").value,
@@ -23,9 +23,12 @@
                 usuario,
                 clave
             };
-            fetch('/usuarios',{
-                method : 'GET',
-                body : JSON.stringify(datos)
+            fetch('/usuarios/save',{
+                method : 'POST',
+                body : JSON.stringify(datos),
+                headers : {
+                    'Content-Type' : 'application/json'
+                }
             }).then(res=>res.json())
             .then(respuesta=>{
                 console.log(respuesta);
